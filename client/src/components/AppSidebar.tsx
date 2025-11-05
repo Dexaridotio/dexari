@@ -10,7 +10,7 @@ import {
   SidebarFooter,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { Home, ArrowUpRight, ArrowDownLeft, History, Settings, Zap } from "lucide-react";
+import { Home, ArrowUpRight, ArrowDownLeft, History, Zap } from "lucide-react";
 import { AgentAvatar } from "./AgentAvatar";
 
 interface AppSidebarProps {
@@ -23,10 +23,6 @@ const mainNav = [
   { title: "Send Payment", url: "/send", icon: ArrowUpRight },
   { title: "Request Payment", url: "/request", icon: ArrowDownLeft },
   { title: "History", url: "/history", icon: History },
-];
-
-const secondaryNav = [
-  { title: "Settings", url: "/settings", icon: Settings },
 ];
 
 export function AppSidebar({ currentPath, onNavigate }: AppSidebarProps) {
@@ -55,26 +51,6 @@ export function AppSidebar({ currentPath, onNavigate }: AppSidebarProps) {
                     onClick={() => onNavigate(item.url)}
                     isActive={currentPath === item.url}
                     data-testid={`nav-${item.title.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
-                    <item.icon className="h-4 w-4" />
-                    <span>{item.title}</span>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel>Settings</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {secondaryNav.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    onClick={() => onNavigate(item.url)}
-                    isActive={currentPath === item.url}
-                    data-testid={`nav-${item.title.toLowerCase()}`}
                   >
                     <item.icon className="h-4 w-4" />
                     <span>{item.title}</span>
