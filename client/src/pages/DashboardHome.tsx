@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { WalletBalanceCard } from "@/components/WalletBalanceCard";
+import { QuickActionsCard } from "@/components/QuickActionsCard";
 import { StatCard } from "@/components/StatCard";
 import { MarketplaceAgentCard } from "@/components/MarketplaceAgentCard";
 import { PendingActionCard } from "@/components/PendingActionCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowUpRight, ArrowDownLeft, Users, Clock, Search, SlidersHorizontal } from "lucide-react";
+import { ArrowUpRight, ArrowDownLeft, Zap, Clock, Search, SlidersHorizontal } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 
@@ -23,75 +22,100 @@ export default function DashboardHome() {
     {
       id: "1",
       address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-      name: "Crypto Investment Analyzer",
-      description: "AI-powered crypto due diligence - Analyze contracts, Twitter callers, and on-chain data",
-      category: "DeFi & Trading",
+      name: "Solana Token Analyzer",
+      description: "Real-time analysis of SPL tokens - Track holders, liquidity pools, and on-chain metrics",
+      category: "DeFi & Analytics",
       rating: 5.0,
-      reviewCount: 12,
-      tags: ["crypto", "defi", "trading"],
-      price: "14.99",
-      priceType: "one-time" as const,
+      reviewCount: 42,
+      tags: ["solana", "spl-token", "analytics"],
+      price: "0.50",
+      priceType: "per-use" as const,
       featured: true
     },
     {
       id: "2",
       address: "0x853d955aCEf822Db058eb8505911ED77F175b99e",
-      name: "AI Token Contract Analyzer",
-      description: "Pay-per-use token contract analysis - Get insights on any token contract address",
-      category: "AI Tools",
-      rating: 3.3,
-      reviewCount: 8,
-      tags: ["ai", "token", "analysis"],
+      name: "NFT Collection Scanner",
+      description: "Scan Solana NFT collections for rarity, floor price, and marketplace activity",
+      category: "NFT Tools",
+      rating: 4.8,
+      reviewCount: 28,
+      tags: ["nft", "solana", "magic-eden"],
       price: "0.25",
       priceType: "per-use" as const
     },
     {
       id: "3",
       address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      name: "x402 Store Starter Kit",
-      description: "Complete Next.js template for building your own Solana token payment store",
-      category: "Development Tools",
+      name: "Wallet Activity Monitor",
+      description: "Track any Solana wallet's transaction history, token holdings, and DeFi positions",
+      category: "DeFi & Analytics",
       rating: 5.0,
-      reviewCount: 24,
-      tags: ["nextjs", "solana", "x402"],
-      price: "29.99",
-      priceType: "one-time" as const
+      reviewCount: 56,
+      tags: ["wallet", "monitoring", "defi"],
+      price: "1.00",
+      priceType: "per-use" as const
     },
     {
       id: "4",
       address: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
-      name: "AI Alpha Caller Analyzer",
-      description: "Pay-per-use Twitter/X alpha caller analysis - Get insights on any KOL",
-      category: "AI Tools",
-      rating: 5.0,
-      reviewCount: 15,
-      tags: ["ai", "twitter", "analysis"],
-      price: "0.25",
+      name: "Jupiter Swap Optimizer",
+      description: "Find the best swap routes on Jupiter with real-time price impact analysis",
+      category: "DeFi & Analytics",
+      rating: 4.9,
+      reviewCount: 67,
+      tags: ["jupiter", "swap", "dex"],
+      price: "0.10",
       priceType: "per-use" as const,
       featured: true
     },
     {
       id: "5",
       address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      name: "xDXRI Telegram Solana Agent",
-      description: "Telegram bot that automatically analyzes Solana token contracts sent to it",
-      category: "DeFi & Trading",
+      name: "Telegram Trading Bot",
+      description: "Automated Solana trading bot for Telegram with limit orders and stop-loss features",
+      category: "Trading Bots",
       rating: 5.0,
-      reviewCount: 31,
-      tags: ["telegram", "solana", "bot"],
-      price: "9.99",
+      reviewCount: 91,
+      tags: ["telegram", "trading", "automation"],
+      price: "15.00",
       priceType: "one-time" as const
     },
     {
       id: "6",
       address: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-      name: "Smart Contract Auditor",
-      description: "Automated security analysis for Solana and EVM smart contracts with detailed reports",
-      category: "Development Tools",
-      rating: 4.8,
+      name: "Smart Contract Deployer",
+      description: "Deploy and verify Solana programs with automated testing and security checks",
+      category: "Developer Tools",
+      rating: 4.7,
+      reviewCount: 34,
+      tags: ["deployment", "anchor", "verification"],
+      price: "2.00",
+      priceType: "per-use" as const
+    },
+    {
+      id: "7",
+      address: "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+      name: "Raydium Pool Finder",
+      description: "Discover new liquidity pools on Raydium with APR calculations and risk metrics",
+      category: "DeFi & Analytics",
+      rating: 4.6,
+      reviewCount: 23,
+      tags: ["raydium", "liquidity", "pools"],
+      price: "0.75",
+      priceType: "per-use" as const,
+      featured: true
+    },
+    {
+      id: "8",
+      address: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      name: "Solana Gas Tracker",
+      description: "Monitor network congestion and get optimal transaction timing recommendations",
+      category: "Network Tools",
+      rating: 4.5,
       reviewCount: 19,
-      tags: ["security", "audit", "smart-contracts"],
-      price: "1.50",
+      tags: ["gas", "network", "optimization"],
+      price: "0.15",
       priceType: "per-use" as const
     },
   ];
@@ -101,17 +125,17 @@ export default function DashboardHome() {
     {
       id: "1",
       type: "payment_request" as const,
-      agent: { address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e", name: "Alice Agent" },
-      amount: "150.00",
+      agent: { address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e", name: "Solana Token Analyzer" },
+      amount: "0.50",
       currency: "USDC",
       timestamp: new Date(Date.now() - 1000 * 60 * 10),
-      description: "Payment for API service usage"
+      description: "Token analysis request for 5 SPL tokens"
     },
     {
       id: "2",
       type: "pending_confirmation" as const,
-      agent: { address: "0x853d955aCEf822Db058eb8505911ED77F175b99e", name: "Bob Agent" },
-      amount: "75.50",
+      agent: { address: "0x853d955aCEf822Db058eb8505911ED77F175b99e", name: "NFT Collection Scanner" },
+      amount: "0.25",
       currency: "USDC",
       timestamp: new Date(Date.now() - 1000 * 60 * 5),
     },
@@ -125,9 +149,10 @@ export default function DashboardHome() {
     const matchesCategory = categoryFilter === "all" || agent.category === categoryFilter;
     const matchesTab = activeTab === "all" || 
       (activeTab === "featured" && agent.featured) ||
-      (activeTab === "ai" && agent.category === "AI Tools") ||
-      (activeTab === "defi" && agent.category === "DeFi & Trading") ||
-      (activeTab === "dev" && agent.category === "Development Tools");
+      (activeTab === "defi" && agent.category === "DeFi & Analytics") ||
+      (activeTab === "nft" && agent.category === "NFT Tools") ||
+      (activeTab === "trading" && agent.category === "Trading Bots") ||
+      (activeTab === "dev" && agent.category === "Developer Tools");
     return matchesSearch && matchesCategory && matchesTab;
   });
 
@@ -166,39 +191,37 @@ export default function DashboardHome() {
   return (
     <div className="space-y-6" data-testid="page-dashboard">
       <div>
-        <h1 className="text-3xl font-display font-bold mb-1">Agent Marketplace</h1>
-        <p className="text-muted-foreground">Discover and pay for AI-powered agents and automation workflows</p>
+        <h1 className="text-3xl font-display font-bold mb-1">Solana Agent Marketplace</h1>
+        <p className="text-muted-foreground">Discover and pay for Solana utilities and automation tools</p>
       </div>
 
-      <WalletBalanceCard
-        balance="2,845.67"
-        currency="USDC"
-        change24h={{ value: "+5.2%", isPositive: true }}
+      <QuickActionsCard
         onSend={() => console.log('Navigate to send')}
         onReceive={() => console.log('Navigate to request')}
         onHistory={() => console.log('Navigate to history')}
+        onConnect={() => toast({ title: "Connect Wallet", description: "Wallet connection feature coming soon" })}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard
           title="Total Spent"
-          value="1,234.56 USDC"
+          value="45.50 USDC"
           icon={ArrowUpRight}
-          trend={{ value: "+12.5%", isPositive: true }}
+          trend={{ value: "+8 uses", isPositive: true }}
         />
         <StatCard
-          title="Total Earned"
-          value="987.32 USDC"
-          icon={ArrowDownLeft}
-          trend={{ value: "+8.3%", isPositive: true }}
-        />
-        <StatCard
-          title="Agents Used"
+          title="Services Used"
           value="24"
-          icon={Users}
+          icon={Zap}
+          trend={{ value: "+3 this week", isPositive: true }}
         />
         <StatCard
-          title="Pending Actions"
+          title="Favorite Tools"
+          value="6"
+          icon={ArrowDownLeft}
+        />
+        <StatCard
+          title="Pending Requests"
           value={mockPendingActions.length.toString()}
           icon={Clock}
         />
@@ -232,7 +255,7 @@ export default function DashboardHome() {
       <Card>
         <CardHeader>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <CardTitle>Browse Agents</CardTitle>
+            <CardTitle>Browse Solana Agents</CardTitle>
             <div className="flex items-center gap-2 w-full sm:w-auto">
               <div className="relative flex-1 sm:w-64">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -251,9 +274,11 @@ export default function DashboardHome() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Categories</SelectItem>
-                  <SelectItem value="AI Tools">AI Tools</SelectItem>
-                  <SelectItem value="DeFi & Trading">DeFi & Trading</SelectItem>
-                  <SelectItem value="Development Tools">Development Tools</SelectItem>
+                  <SelectItem value="DeFi & Analytics">DeFi & Analytics</SelectItem>
+                  <SelectItem value="NFT Tools">NFT Tools</SelectItem>
+                  <SelectItem value="Trading Bots">Trading Bots</SelectItem>
+                  <SelectItem value="Developer Tools">Developer Tools</SelectItem>
+                  <SelectItem value="Network Tools">Network Tools</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -265,8 +290,9 @@ export default function DashboardHome() {
             <TabsList>
               <TabsTrigger value="all" data-testid="tab-all">All</TabsTrigger>
               <TabsTrigger value="featured" data-testid="tab-featured">Featured</TabsTrigger>
-              <TabsTrigger value="ai" data-testid="tab-ai">AI Tools</TabsTrigger>
               <TabsTrigger value="defi" data-testid="tab-defi">DeFi</TabsTrigger>
+              <TabsTrigger value="nft" data-testid="tab-nft">NFT</TabsTrigger>
+              <TabsTrigger value="trading" data-testid="tab-trading">Trading</TabsTrigger>
               <TabsTrigger value="dev" data-testid="tab-dev">Dev Tools</TabsTrigger>
             </TabsList>
           </Tabs>
