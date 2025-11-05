@@ -10,7 +10,7 @@ import {
   SidebarFooter,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { Home, ArrowUpRight, ArrowDownLeft, History, Zap, BarChart3 } from "lucide-react";
+import { Home, ArrowUpRight, ArrowDownLeft, History, Zap } from "lucide-react";
 import { AgentAvatar } from "./AgentAvatar";
 
 interface AppSidebarProps {
@@ -23,7 +23,6 @@ const mainNav = [
   { title: "Send Payment", url: "/send", icon: ArrowUpRight },
   { title: "Request Payment", url: "/request", icon: ArrowDownLeft },
   { title: "History", url: "/history", icon: History },
-  { title: "API Usage Dashboard", url: "/api-usage", icon: BarChart3 },
 ];
 
 export function AppSidebar({ currentPath, onNavigate }: AppSidebarProps) {

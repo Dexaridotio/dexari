@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowUpRight, ArrowDownLeft, Zap, Clock, Search, SlidersHorizontal, ArrowLeftRight } from "lucide-react";
+import { ArrowUpRight, ArrowDownLeft, Zap, Clock, Search, SlidersHorizontal } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 
@@ -19,7 +19,6 @@ export default function DashboardHome() {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [activeTab, setActiveTab] = useState("all");
   const [showWalletDialog, setShowWalletDialog] = useState(false);
-  const [network, setNetwork] = useState<"solana" | "ethereum">("solana");
 
   //todo: remove mock functionality
   const mockAgents = [
@@ -122,19 +121,6 @@ export default function DashboardHome() {
       price: "0.15",
       priceType: "per-use" as const
     },
-    {
-      id: "9",
-      address: "LENDxK9vQ8yH3bNz7MqGpWxJ5r8vN6Y2cLGxfLpump",
-      name: "DeFi Lending Optimizer",
-      description: "Compare lending rates across Solana protocols and find the best APY for your assets",
-      category: "Lending",
-      rating: 4.9,
-      reviewCount: 38,
-      tags: ["lending", "defi", "apy", "solend"],
-      price: "0.50",
-      priceType: "per-use" as const,
-      featured: true
-    },
   ];
 
   //todo: remove mock functionality
@@ -169,7 +155,6 @@ export default function DashboardHome() {
       (activeTab === "defi" && agent.category === "DeFi & Analytics") ||
       (activeTab === "nft" && agent.category === "NFT Tools") ||
       (activeTab === "trading" && agent.category === "Trading Bots") ||
-      (activeTab === "lending" && agent.category === "Lending") ||
       (activeTab === "dev" && agent.category === "Developer Tools");
     return matchesSearch && matchesCategory && matchesTab;
   });
@@ -198,15 +183,6 @@ export default function DashboardHome() {
       description: "The request has been declined.",
     });
     console.log('Rejected action:', id);
-  };
-
-  const handleNetworkSwitch = () => {
-    const newNetwork = network === "solana" ? "ethereum" : "solana";
-    setNetwork(newNetwork);
-    toast({
-      title: "Network Switched",
-      description: `Now browsing ${newNetwork === "ethereum" ? "Ethereum" : "Solana"} agents`,
-    });
   };
 
   return (
@@ -290,19 +266,7 @@ export default function DashboardHome() {
       <Card>
         <CardHeader>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <CardTitle>Browse {network === "solana" ? "Solana" : "Ethereum"} Agents</CardTitle>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleNetworkSwitch}
-                className="gap-2"
-                data-testid="button-switch-network"
-              >
-                <ArrowLeftRight className="h-3.5 w-3.5" />
-                {network === "solana" ? "Browse Ethereum" : "Browse Solana"}
-              </Button>
-            </div>
+            <CardTitle>Browse Solana Agents</CardTitle>
             <div className="flex items-center gap-2 w-full sm:w-auto">
               <div className="relative flex-1 sm:w-64">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -324,7 +288,6 @@ export default function DashboardHome() {
                   <SelectItem value="DeFi & Analytics">DeFi & Analytics</SelectItem>
                   <SelectItem value="NFT Tools">NFT Tools</SelectItem>
                   <SelectItem value="Trading Bots">Trading Bots</SelectItem>
-                  <SelectItem value="Lending">Lending</SelectItem>
                   <SelectItem value="Developer Tools">Developer Tools</SelectItem>
                   <SelectItem value="Network Tools">Network Tools</SelectItem>
                 </SelectContent>
@@ -340,7 +303,6 @@ export default function DashboardHome() {
               <TabsTrigger value="featured" data-testid="tab-featured">Featured</TabsTrigger>
               <TabsTrigger value="defi" data-testid="tab-defi">DeFi</TabsTrigger>
               <TabsTrigger value="nft" data-testid="tab-nft">NFT</TabsTrigger>
-              <TabsTrigger value="lending" data-testid="tab-lending">Lending</TabsTrigger>
               <TabsTrigger value="trading" data-testid="tab-trading">Trading</TabsTrigger>
               <TabsTrigger value="dev" data-testid="tab-dev">Dev Tools</TabsTrigger>
             </TabsList>

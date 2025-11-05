@@ -11,7 +11,6 @@ import DashboardHome from "@/pages/DashboardHome";
 import SendPaymentPage from "@/pages/SendPaymentPage";
 import RequestPaymentPage from "@/pages/RequestPaymentPage";
 import TransactionHistoryPage from "@/pages/TransactionHistoryPage";
-import ApiUsageDashboard from "@/pages/ApiUsageDashboard";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,7 +20,6 @@ function Router() {
       <Route path="/send" component={SendPaymentPage} />
       <Route path="/request" component={RequestPaymentPage} />
       <Route path="/history" component={TransactionHistoryPage} />
-      <Route path="/api-usage" component={ApiUsageDashboard} />
       <Route component={NotFound} />
     </Switch>
   );
