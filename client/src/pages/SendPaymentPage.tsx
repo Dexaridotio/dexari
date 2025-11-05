@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { AgentAvatar } from "@/components/AgentAvatar";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { WalletRequiredDialog } from "@/components/WalletRequiredDialog";
 
 type Step = "enter" | "confirm" | "processing" | "success";
 
@@ -15,11 +16,11 @@ export default function SendPaymentPage() {
   const [recipient, setRecipient] = useState("");
   const [amount, setAmount] = useState("");
   const [note, setNote] = useState("");
+  const [showWalletDialog, setShowWalletDialog] = useState(false);
 
   const handleSend = () => {
+    setShowWalletDialog(true);
     console.log('Sending payment:', { recipient, amount, note });
-    setStep("processing");
-    setTimeout(() => setStep("success"), 2000);
   };
 
   const getProgress = () => {
@@ -194,6 +195,8 @@ export default function SendPaymentPage() {
           )}
         </CardContent>
       </Card>
+
+      <WalletRequiredDialog open={showWalletDialog} onOpenChange={setShowWalletDialog} />
     </div>
   );
 }

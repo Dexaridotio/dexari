@@ -6,11 +6,13 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Copy, QrCode, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { WalletRequiredDialog } from "@/components/WalletRequiredDialog";
 
 export default function RequestPaymentPage() {
   const [amount, setAmount] = useState("");
   const [description, setDescription] = useState("");
   const [copied, setCopied] = useState(false);
+  const [showWalletDialog, setShowWalletDialog] = useState(false);
   const { toast } = useToast();
   
   const myAddress = "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM";
@@ -26,11 +28,17 @@ export default function RequestPaymentPage() {
   };
 
   const generateRequest = () => {
+    if (!amount) {
+      toast({
+        title: "Error",
+        description: "Please enter an amount",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setShowWalletDialog(true);
     console.log('Generating payment request:', { amount, description });
-    toast({
-      title: "Payment request created",
-      description: "Your payment request has been generated",
-    });
   };
 
   return (
@@ -146,6 +154,8 @@ export default function RequestPaymentPage() {
           </div>
         </CardContent>
       </Card>
+
+      <WalletRequiredDialog open={showWalletDialog} onOpenChange={setShowWalletDialog} />
     </div>
   );
 }

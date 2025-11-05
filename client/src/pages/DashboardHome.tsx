@@ -3,6 +3,7 @@ import { QuickActionsCard } from "@/components/QuickActionsCard";
 import { StatCard } from "@/components/StatCard";
 import { MarketplaceAgentCard } from "@/components/MarketplaceAgentCard";
 import { PendingActionCard } from "@/components/PendingActionCard";
+import { WalletRequiredDialog } from "@/components/WalletRequiredDialog";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -16,6 +17,7 @@ export default function DashboardHome() {
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [activeTab, setActiveTab] = useState("all");
+  const [showWalletDialog, setShowWalletDialog] = useState(false);
 
   //todo: remove mock functionality
   const mockAgents = [
@@ -157,10 +159,7 @@ export default function DashboardHome() {
   });
 
   const handleQuickPay = (agentName: string) => {
-    toast({
-      title: "Quick Pay",
-      description: `Opening payment to ${agentName}...`,
-    });
+    setShowWalletDialog(true);
     console.log('Quick pay to:', agentName);
   };
 
@@ -173,10 +172,7 @@ export default function DashboardHome() {
   };
 
   const handleApproveAction = (id: string) => {
-    toast({
-      title: "Action Approved",
-      description: "Processing your approval...",
-    });
+    setShowWalletDialog(true);
     console.log('Approved action:', id);
   };
 
@@ -196,11 +192,13 @@ export default function DashboardHome() {
       </div>
 
       <QuickActionsCard
-        onSend={() => console.log('Navigate to send')}
-        onReceive={() => console.log('Navigate to request')}
+        onSend={() => setShowWalletDialog(true)}
+        onReceive={() => setShowWalletDialog(true)}
         onHistory={() => console.log('Navigate to history')}
-        onConnect={() => toast({ title: "Connect Wallet", description: "Wallet connection feature coming soon" })}
+        onConnect={() => setShowWalletDialog(true)}
       />
+
+      <WalletRequiredDialog open={showWalletDialog} onOpenChange={setShowWalletDialog} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard

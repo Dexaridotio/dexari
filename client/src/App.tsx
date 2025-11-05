@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { ConnectWalletButton } from "@/components/ConnectWalletButton";
 import DashboardHome from "@/pages/DashboardHome";
 import SendPaymentPage from "@/pages/SendPaymentPage";
 import RequestPaymentPage from "@/pages/RequestPaymentPage";
@@ -39,9 +40,12 @@ function App() {
           <div className="flex h-screen w-full">
             <AppSidebar currentPath={location} onNavigate={setLocation} />
             <div className="flex flex-col flex-1 overflow-hidden">
-              <header className="flex items-center justify-between p-4 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+              <header className="flex items-center justify-between gap-3 p-4 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
                 <SidebarTrigger data-testid="button-sidebar-toggle" />
-                <ThemeToggle />
+                <div className="flex items-center gap-2">
+                  <ConnectWalletButton variant="default" size="sm" />
+                  <ThemeToggle />
+                </div>
               </header>
               <main className="flex-1 overflow-y-auto p-6 lg:p-8">
                 <Router />
