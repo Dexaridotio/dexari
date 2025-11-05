@@ -1,0 +1,104 @@
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarFooter,
+  SidebarHeader,
+} from "@/components/ui/sidebar";
+import { Home, ArrowUpRight, ArrowDownLeft, History, Settings, Zap } from "lucide-react";
+import { AgentAvatar } from "./AgentAvatar";
+
+interface AppSidebarProps {
+  currentPath: string;
+  onNavigate: (path: string) => void;
+}
+
+const mainNav = [
+  { title: "Dashboard", url: "/", icon: Home },
+  { title: "Send Payment", url: "/send", icon: ArrowUpRight },
+  { title: "Request Payment", url: "/request", icon: ArrowDownLeft },
+  { title: "History", url: "/history", icon: History },
+];
+
+const secondaryNav = [
+  { title: "Settings", url: "/settings", icon: Settings },
+];
+
+export function AppSidebar({ currentPath, onNavigate }: AppSidebarProps) {
+  return (
+    <Sidebar data-testid="sidebar-main">
+      <SidebarHeader className="p-6 border-b border-sidebar-border">
+        <div className="flex items-center gap-2">
+          <div className="p-2 bg-primary rounded-md">
+            <Zap className="h-5 w-5 text-primary-foreground" />
+          </div>
+          <div>
+            <h2 className="font-display font-bold text-lg">X402</h2>
+            <p className="text-xs text-muted-foreground">Agent Payments</p>
+          </div>
+        </div>
+      </SidebarHeader>
+      
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {mainNav.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    onClick={() => onNavigate(item.url)}
+                    isActive={currentPath === item.url}
+                    data-testid={`nav-${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    <item.icon className="h-4 w-4" />
+                    <span>{item.title}</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Settings</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {secondaryNav.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    onClick={() => onNavigate(item.url)}
+                    isActive={currentPath === item.url}
+                    data-testid={`nav-${item.title.toLowerCase()}`}
+                  >
+                    <item.icon className="h-4 w-4" />
+                    <span>{item.title}</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+
+      <SidebarFooter className="p-4 border-t border-sidebar-border">
+        <div className="flex items-center gap-3 p-2 rounded-md hover-elevate cursor-pointer" data-testid="user-profile">
+          <AgentAvatar 
+            address="0x742d35Cc6634C0532925a3b844Bc454e4438f44e" 
+            name="My Agent" 
+            size="sm"
+          />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium truncate">My Agent</p>
+            <p className="text-xs text-muted-foreground truncate">0x742d...f44e</p>
+          </div>
+        </div>
+      </SidebarFooter>
+    </Sidebar>
+  );
+}
