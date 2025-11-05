@@ -40,12 +40,12 @@ export default function MarketplaceAgentCardExample() {
         agent={{
           id: "3",
           address: "C6kYXcaRUMqeBF5fhg165RWU7AnpT9z92fvKNoMqjmz6",
-          name: "x402 Store Starter Kit",
+          name: "$DXRI Store Starter Kit",
           description: "Complete Next.js template for building your own Solana token payment store",
           category: "Development Tools",
           rating: 5.0,
           reviewCount: 24,
-          tags: ["nextjs", "solana", "x402"],
+          tags: ["nextjs", "solana", "dxri"],
           price: "29.99",
           priceType: "one-time"
         }}

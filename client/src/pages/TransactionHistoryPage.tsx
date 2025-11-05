@@ -73,9 +73,21 @@ export default function TransactionHistoryPage() {
   return (
     <div className="space-y-6" data-testid="page-transaction-history">
       <div className="flex items-center justify-between gap-4 flex-wrap">
-        <div>
-          <h1 className="text-3xl font-display font-bold mb-1">Transaction History</h1>
-          <p className="text-muted-foreground">View and filter all your payment transactions</p>
+        <div className="flex items-center gap-4">
+          <img 
+            src="/logo-black.png" 
+            alt="DXRI Logo" 
+            className="h-8 dark:hidden block"
+          />
+          <img 
+            src="/logo-white.png" 
+            alt="DXRI Logo" 
+            className="h-8 dark:block hidden"
+          />
+          <div>
+            <h1 className="text-3xl font-display font-bold mb-1">Transaction History</h1>
+            <p className="text-muted-foreground">View and filter all your payment transactions</p>
+          </div>
         </div>
         <Button variant="outline" className="gap-2" data-testid="button-export">
           <Download className="h-4 w-4" />

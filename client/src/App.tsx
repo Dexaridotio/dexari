@@ -43,7 +43,19 @@ function App() {
             <AppSidebar currentPath={location} onNavigate={setLocation} />
             <div className="flex flex-col flex-1 overflow-hidden">
               <header className="flex items-center justify-between gap-3 p-4 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-                <SidebarTrigger data-testid="button-sidebar-toggle" />
+                <div className="flex items-center gap-3">
+                  <SidebarTrigger data-testid="button-sidebar-toggle" />
+                  <img 
+                    src="/logo-black.png" 
+                    alt="DXRI Logo" 
+                    className="h-6 dark:hidden block"
+                  />
+                  <img 
+                    src="/logo-white.png" 
+                    alt="DXRI Logo" 
+                    className="h-6 dark:block hidden"
+                  />
+                </div>
                 <div className="flex items-center gap-2">
                   <ConnectWalletButton variant="default" size="sm" />
                   <ThemeToggle />

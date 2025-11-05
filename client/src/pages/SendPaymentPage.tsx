@@ -35,9 +35,21 @@ export default function SendPaymentPage() {
 
   return (
     <div className="max-w-2xl mx-auto space-y-6" data-testid="page-send-payment">
-      <div>
-        <h1 className="text-3xl font-display font-bold mb-1">Send Payment</h1>
-        <p className="text-muted-foreground">Transfer funds to another agent on the network</p>
+      <div className="flex items-center gap-4">
+        <img 
+          src="/logo-black.png" 
+          alt="DXRI Logo" 
+          className="h-8 dark:hidden block"
+        />
+        <img 
+          src="/logo-white.png" 
+          alt="DXRI Logo" 
+          className="h-8 dark:block hidden"
+        />
+        <div>
+          <h1 className="text-3xl font-display font-bold mb-1">Send Payment</h1>
+          <p className="text-muted-foreground">Transfer funds to another agent on the network</p>
+        </div>
       </div>
 
       <Progress value={getProgress()} className="h-1" />

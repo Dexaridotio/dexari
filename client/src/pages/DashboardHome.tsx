@@ -211,9 +211,21 @@ export default function DashboardHome() {
 
   return (
     <div className="space-y-6" data-testid="page-dashboard">
-      <div>
-        <h1 className="text-3xl font-display font-bold mb-1">Solana Agent Marketplace</h1>
-        <p className="text-muted-foreground">Discover and pay for Solana utilities and automation tools</p>
+      <div className="flex items-center gap-4">
+        <img 
+          src="/logo-black.png" 
+          alt="DXRI Logo" 
+          className="h-10 dark:hidden block"
+        />
+        <img 
+          src="/logo-white.png" 
+          alt="DXRI Logo" 
+          className="h-10 dark:block hidden"
+        />
+        <div>
+          <h1 className="text-3xl font-display font-bold mb-1">Solana Agent Marketplace</h1>
+          <p className="text-muted-foreground">Discover and pay for Solana utilities and automation tools</p>
+        </div>
       </div>
 
       <QuickActionsCard

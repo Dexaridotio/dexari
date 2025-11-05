@@ -72,9 +72,21 @@ export default function ApiUsageDashboard() {
 
   return (
     <div className="space-y-6" data-testid="page-api-usage">
-      <div>
-        <h1 className="text-3xl font-display font-bold mb-1">API Usage Dashboard</h1>
-        <p className="text-muted-foreground">Monitor your API consumption and performance metrics</p>
+      <div className="flex items-center gap-4">
+        <img 
+          src="/logo-black.png" 
+          alt="DXRI Logo" 
+          className="h-8 dark:hidden block"
+        />
+        <img 
+          src="/logo-white.png" 
+          alt="DXRI Logo" 
+          className="h-8 dark:block hidden"
+        />
+        <div>
+          <h1 className="text-3xl font-display font-bold mb-1">API Usage Dashboard</h1>
+          <p className="text-muted-foreground">Monitor your API consumption and performance metrics</p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

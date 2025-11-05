@@ -43,9 +43,21 @@ export default function RequestPaymentPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6" data-testid="page-request-payment">
-      <div>
-        <h1 className="text-3xl font-display font-bold mb-1">Request Payment</h1>
-        <p className="text-muted-foreground">Generate a payment request for other agents</p>
+      <div className="flex items-center gap-4">
+        <img 
+          src="/logo-black.png" 
+          alt="DXRI Logo" 
+          className="h-8 dark:hidden block"
+        />
+        <img 
+          src="/logo-white.png" 
+          alt="DXRI Logo" 
+          className="h-8 dark:block hidden"
+        />
+        <div>
+          <h1 className="text-3xl font-display font-bold mb-1">Request Payment</h1>
+          <p className="text-muted-foreground">Generate a payment request for other agents</p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

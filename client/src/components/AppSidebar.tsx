@@ -30,12 +30,19 @@ export function AppSidebar({ currentPath, onNavigate }: AppSidebarProps) {
   return (
     <Sidebar data-testid="sidebar-main">
       <SidebarHeader className="p-6 border-b border-sidebar-border">
-        <div className="flex items-center gap-2">
-          <div className="p-2 bg-primary rounded-md">
-            <Zap className="h-5 w-5 text-primary-foreground" />
-          </div>
+        <div className="flex items-center gap-3">
+          <img 
+            src="/logo-white.png" 
+            alt="DXRI Logo" 
+            className="h-8 dark:block hidden"
+          />
+          <img 
+            src="/logo-black.png" 
+            alt="DXRI Logo" 
+            className="h-8 dark:hidden block"
+          />
           <div>
-            <h2 className="font-display font-bold text-lg">X402</h2>
+            <h2 className="font-display font-bold text-lg">$DXRI</h2>
             <p className="text-xs text-muted-foreground">Agent Payments</p>
           </div>
         </div>
