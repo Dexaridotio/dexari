@@ -120,6 +120,19 @@ export default function DashboardHome() {
       price: "0.15",
       priceType: "per-use" as const
     },
+    {
+      id: "9",
+      address: "LENDxK9vQ8yH3bNz7MqGpWxJ5r8vN6Y2cLGxfLpump",
+      name: "DeFi Lending Optimizer",
+      description: "Compare lending rates across Solana protocols and find the best APY for your assets",
+      category: "Lending",
+      rating: 4.9,
+      reviewCount: 38,
+      tags: ["lending", "defi", "apy", "solend"],
+      price: "0.50",
+      priceType: "per-use" as const,
+      featured: true
+    },
   ];
 
   //todo: remove mock functionality
@@ -154,6 +167,7 @@ export default function DashboardHome() {
       (activeTab === "defi" && agent.category === "DeFi & Analytics") ||
       (activeTab === "nft" && agent.category === "NFT Tools") ||
       (activeTab === "trading" && agent.category === "Trading Bots") ||
+      (activeTab === "lending" && agent.category === "Lending") ||
       (activeTab === "dev" && agent.category === "Developer Tools");
     return matchesSearch && matchesCategory && matchesTab;
   });
@@ -275,6 +289,7 @@ export default function DashboardHome() {
                   <SelectItem value="DeFi & Analytics">DeFi & Analytics</SelectItem>
                   <SelectItem value="NFT Tools">NFT Tools</SelectItem>
                   <SelectItem value="Trading Bots">Trading Bots</SelectItem>
+                  <SelectItem value="Lending">Lending</SelectItem>
                   <SelectItem value="Developer Tools">Developer Tools</SelectItem>
                   <SelectItem value="Network Tools">Network Tools</SelectItem>
                 </SelectContent>
@@ -290,6 +305,7 @@ export default function DashboardHome() {
               <TabsTrigger value="featured" data-testid="tab-featured">Featured</TabsTrigger>
               <TabsTrigger value="defi" data-testid="tab-defi">DeFi</TabsTrigger>
               <TabsTrigger value="nft" data-testid="tab-nft">NFT</TabsTrigger>
+              <TabsTrigger value="lending" data-testid="tab-lending">Lending</TabsTrigger>
               <TabsTrigger value="trading" data-testid="tab-trading">Trading</TabsTrigger>
               <TabsTrigger value="dev" data-testid="tab-dev">Dev Tools</TabsTrigger>
             </TabsList>
