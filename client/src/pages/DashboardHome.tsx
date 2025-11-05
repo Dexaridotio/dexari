@@ -21,7 +21,7 @@ export default function DashboardHome() {
   const mockAgents = [
     {
       id: "1",
-      address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+      address: "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
       name: "Solana Token Analyzer",
       description: "Real-time analysis of SPL tokens - Track holders, liquidity pools, and on-chain metrics",
       category: "DeFi & Analytics",
@@ -34,7 +34,7 @@ export default function DashboardHome() {
     },
     {
       id: "2",
-      address: "0x853d955aCEf822Db058eb8505911ED77F175b99e",
+      address: "HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH",
       name: "NFT Collection Scanner",
       description: "Scan Solana NFT collections for rarity, floor price, and marketplace activity",
       category: "NFT Tools",
@@ -46,7 +46,7 @@ export default function DashboardHome() {
     },
     {
       id: "3",
-      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      address: "C6kYXcaRUMqeBF5fhg165RWU7AnpT9z92fvKNoMqjmz6",
       name: "Wallet Activity Monitor",
       description: "Track any Solana wallet's transaction history, token holdings, and DeFi positions",
       category: "DeFi & Analytics",
@@ -58,7 +58,7 @@ export default function DashboardHome() {
     },
     {
       id: "4",
-      address: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+      address: "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB",
       name: "Jupiter Swap Optimizer",
       description: "Find the best swap routes on Jupiter with real-time price impact analysis",
       category: "DeFi & Analytics",
@@ -71,7 +71,7 @@ export default function DashboardHome() {
     },
     {
       id: "5",
-      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      address: "TRDwq3BN4mP68GSFjvYJUmEtFLN6gvjRDvjU8YwZqeL",
       name: "Telegram Trading Bot",
       description: "Automated Solana trading bot for Telegram with limit orders and stop-loss features",
       category: "Trading Bots",
@@ -83,7 +83,7 @@ export default function DashboardHome() {
     },
     {
       id: "6",
-      address: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      address: "DEPLoYT7qK4WrKhKSMjvLnR4z8fJ9kqPvVXmKmWy3nB",
       name: "Smart Contract Deployer",
       description: "Deploy and verify Solana programs with automated testing and security checks",
       category: "Developer Tools",
@@ -95,7 +95,7 @@ export default function DashboardHome() {
     },
     {
       id: "7",
-      address: "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+      address: "RAYDiuM675SUiXXPaGWtXWZwJ5r8vN6Y2cLGxfLpump",
       name: "Raydium Pool Finder",
       description: "Discover new liquidity pools on Raydium with APR calculations and risk metrics",
       category: "DeFi & Analytics",
@@ -108,7 +108,7 @@ export default function DashboardHome() {
     },
     {
       id: "8",
-      address: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      address: "GASFeEZqApx8iF7TG7FpBGrx2hnxWbYE9qzZNa8PUMP",
       name: "Solana Gas Tracker",
       description: "Monitor network congestion and get optimal transaction timing recommendations",
       category: "Network Tools",
@@ -125,7 +125,7 @@ export default function DashboardHome() {
     {
       id: "1",
       type: "payment_request" as const,
-      agent: { address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e", name: "Solana Token Analyzer" },
+      agent: { address: "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM", name: "Solana Token Analyzer" },
       amount: "0.50",
       currency: "USDC",
       timestamp: new Date(Date.now() - 1000 * 60 * 10),
@@ -134,7 +134,7 @@ export default function DashboardHome() {
     {
       id: "2",
       type: "pending_confirmation" as const,
-      agent: { address: "0x853d955aCEf822Db058eb8505911ED77F175b99e", name: "NFT Collection Scanner" },
+      agent: { address: "HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH", name: "NFT Collection Scanner" },
       amount: "0.25",
       currency: "USDC",
       timestamp: new Date(Date.now() - 1000 * 60 * 5),

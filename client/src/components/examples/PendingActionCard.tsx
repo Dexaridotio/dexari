@@ -6,7 +6,7 @@ export default function PendingActionCardExample() {
       <PendingActionCard
         id="1"
         type="payment_request"
-        agent={{ address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e", name: "Alice Agent" }}
+        agent={{ address: "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM", name: "Solana Token Analyzer" }}
         amount="150.00"
         currency="USDC"
         timestamp={new Date(Date.now() - 1000 * 60 * 10)}
@@ -17,7 +17,7 @@ export default function PendingActionCardExample() {
       <PendingActionCard
         id="2"
         type="pending_confirmation"
-        agent={{ address: "0x853d955aCEf822Db058eb8505911ED77F175b99e", name: "Bob Agent" }}
+        agent={{ address: "HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH", name: "NFT Collection Scanner" }}
         amount="75.50"
         currency="USDC"
         timestamp={new Date(Date.now() - 1000 * 60 * 5)}

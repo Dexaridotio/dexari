@@ -65,13 +65,13 @@ export function AppSidebar({ currentPath, onNavigate }: AppSidebarProps) {
       <SidebarFooter className="p-4 border-t border-sidebar-border">
         <div className="flex items-center gap-3 p-2 rounded-md hover-elevate cursor-pointer" data-testid="user-profile">
           <AgentAvatar 
-            address="0x742d35Cc6634C0532925a3b844Bc454e4438f44e" 
-            name="My Agent" 
+            address="9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM" 
+            name="My Wallet" 
             size="sm"
           />
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium truncate">My Agent</p>
-            <p className="text-xs text-muted-foreground truncate">0x742d...f44e</p>
+            <p className="text-sm font-medium truncate">My Wallet</p>
+            <p className="text-xs text-muted-foreground truncate">9WzD...AWWM</p>
           </div>
         </div>
       </SidebarFooter>

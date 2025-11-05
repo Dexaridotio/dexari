@@ -5,8 +5,8 @@ export default function AgentCardExample() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <AgentCard
         agent={{
-          address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-          name: "Alice Agent",
+          address: "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          name: "Solana Token Analyzer",
           totalSent: "1,250",
           totalReceived: "890",
           lastTransaction: "30 mins ago"
@@ -16,8 +16,8 @@ export default function AgentCardExample() {
       />
       <AgentCard
         agent={{
-          address: "0x853d955aCEf822Db058eb8505911ED77F175b99e",
-          name: "Bob Agent",
+          address: "HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH",
+          name: "NFT Collection Scanner",
           totalSent: "500",
           totalReceived: "1,200",
           lastTransaction: "2 hours ago"
@@ -27,8 +27,8 @@ export default function AgentCardExample() {
       />
       <AgentCard
         agent={{
-          address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-          name: "Charlie Agent",
+          address: "C6kYXcaRUMqeBF5fhg165RWU7AnpT9z92fvKNoMqjmz6",
+          name: "Wallet Activity Monitor",
           totalSent: "0",
           totalReceived: "350",
           lastTransaction: "1 day ago"

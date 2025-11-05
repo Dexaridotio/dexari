@@ -17,7 +17,7 @@ export default function TransactionHistoryPage() {
     {
       id: "1",
       type: "sent" as const,
-      agent: { address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e", name: "Alice Agent" },
+      agent: { address: "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM", name: "Solana Token Analyzer" },
       amount: "250.00",
       currency: "USDC",
       status: "confirmed" as const,
@@ -26,7 +26,7 @@ export default function TransactionHistoryPage() {
     {
       id: "2",
       type: "received" as const,
-      agent: { address: "0x853d955aCEf822Db058eb8505911ED77F175b99e", name: "Bob Agent" },
+      agent: { address: "HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH", name: "NFT Collection Scanner" },
       amount: "500.00",
       currency: "USDC",
       status: "confirmed" as const,
@@ -35,7 +35,7 @@ export default function TransactionHistoryPage() {
     {
       id: "3",
       type: "sent" as const,
-      agent: { address: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984" },
+      agent: { address: "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB" },
       amount: "100.50",
       currency: "USDC",
       status: "processing" as const,
@@ -44,7 +44,7 @@ export default function TransactionHistoryPage() {
     {
       id: "4",
       type: "received" as const,
-      agent: { address: "0x6B175474E89094C44Da98b954EedeAC495271d0F", name: "Charlie Agent" },
+      agent: { address: "C6kYXcaRUMqeBF5fhg165RWU7AnpT9z92fvKNoMqjmz6", name: "Wallet Activity Monitor" },
       amount: "75.25",
       currency: "USDC",
       status: "confirmed" as const,
@@ -53,7 +53,7 @@ export default function TransactionHistoryPage() {
     {
       id: "5",
       type: "sent" as const,
-      agent: { address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" },
+      agent: { address: "TRDwq3BN4mP68GSFjvYJUmEtFLN6gvjRDvjU8YwZqeL" },
       amount: "200.00",
       currency: "USDC",
       status: "failed" as const,

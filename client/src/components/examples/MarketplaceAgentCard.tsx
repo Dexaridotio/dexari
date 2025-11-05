@@ -6,7 +6,7 @@ export default function MarketplaceAgentCardExample() {
       <MarketplaceAgentCard
         agent={{
           id: "1",
-          address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+          address: "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
           name: "Crypto Investment Analyzer",
           description: "AI-powered crypto due diligence - Analyze contracts, Twitter callers, and on-chain data",
           category: "DeFi & Trading",
@@ -23,7 +23,7 @@ export default function MarketplaceAgentCardExample() {
       <MarketplaceAgentCard
         agent={{
           id: "2",
-          address: "0x853d955aCEf822Db058eb8505911ED77F175b99e",
+          address: "HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH",
           name: "AI Token Contract Analyzer",
           description: "Pay-per-use token contract analysis - Get insights on any token contract address",
           category: "AI Tools",
@@ -39,7 +39,7 @@ export default function MarketplaceAgentCardExample() {
       <MarketplaceAgentCard
         agent={{
           id: "3",
-          address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+          address: "C6kYXcaRUMqeBF5fhg165RWU7AnpT9z92fvKNoMqjmz6",
           name: "x402 Store Starter Kit",
           description: "Complete Next.js template for building your own Solana token payment store",
           category: "Development Tools",

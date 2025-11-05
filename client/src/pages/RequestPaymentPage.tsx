@@ -13,14 +13,14 @@ export default function RequestPaymentPage() {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
   
-  const myAddress = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e";
+  const myAddress = "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM";
 
   const copyAddress = () => {
     navigator.clipboard.writeText(myAddress);
     setCopied(true);
     toast({
       title: "Address copied",
-      description: "Agent address copied to clipboard",
+      description: "Solana wallet address copied to clipboard",
     });
     setTimeout(() => setCopied(false), 2000);
   };
