@@ -5,10 +5,11 @@ import { MarketplaceAgentCard } from "@/components/MarketplaceAgentCard";
 import { PendingActionCard } from "@/components/PendingActionCard";
 import { WalletRequiredDialog } from "@/components/WalletRequiredDialog";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowUpRight, ArrowDownLeft, Zap, Clock, Search, SlidersHorizontal } from "lucide-react";
+import { ArrowUpRight, ArrowDownLeft, Zap, Clock, Search, SlidersHorizontal, ArrowLeftRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 
@@ -18,6 +19,7 @@ export default function DashboardHome() {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [activeTab, setActiveTab] = useState("all");
   const [showWalletDialog, setShowWalletDialog] = useState(false);
+  const [network, setNetwork] = useState<"solana" | "ethereum">("solana");
 
   //todo: remove mock functionality
   const mockAgents = [
@@ -198,6 +200,15 @@ export default function DashboardHome() {
     console.log('Rejected action:', id);
   };
 
+  const handleNetworkSwitch = () => {
+    const newNetwork = network === "solana" ? "ethereum" : "solana";
+    setNetwork(newNetwork);
+    toast({
+      title: "Network Switched",
+      description: `Now browsing ${newNetwork === "ethereum" ? "Ethereum" : "Solana"} agents`,
+    });
+  };
+
   return (
     <div className="space-y-6" data-testid="page-dashboard">
       <div>
@@ -267,7 +278,19 @@ export default function DashboardHome() {
       <Card>
         <CardHeader>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <CardTitle>Browse Solana Agents</CardTitle>
+            <div className="flex items-center gap-3">
+              <CardTitle>Browse {network === "solana" ? "Solana" : "Ethereum"} Agents</CardTitle>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleNetworkSwitch}
+                className="gap-2"
+                data-testid="button-switch-network"
+              >
+                <ArrowLeftRight className="h-3.5 w-3.5" />
+                {network === "solana" ? "Browse Ethereum" : "Browse Solana"}
+              </Button>
+            </div>
             <div className="flex items-center gap-2 w-full sm:w-auto">
               <div className="relative flex-1 sm:w-64">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
