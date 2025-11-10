@@ -12,7 +12,6 @@ export default function TransactionHistoryPage() {
   const [statusFilter, setStatusFilter] = useState("all");
   const [typeFilter, setTypeFilter] = useState("all");
 
-  //todo: remove mock functionality
   const mockTransactions = [
     {
       id: "1",

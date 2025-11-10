@@ -20,7 +20,6 @@ export default function DashboardHome() {
   const [activeTab, setActiveTab] = useState("all");
   const [showWalletDialog, setShowWalletDialog] = useState(false);
 
-  //todo: remove mock functionality
   const mockAgents = [
     {
       id: "1",
@@ -123,7 +122,6 @@ export default function DashboardHome() {
     },
   ];
 
-  //todo: remove mock functionality
   const mockPendingActions = [
     {
       id: "1",
