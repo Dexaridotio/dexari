@@ -10,7 +10,7 @@ import {
   SidebarFooter,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { Home, ArrowUpRight, ArrowDownLeft, History, Zap } from "lucide-react";
+import { Home, ArrowUpRight, ArrowDownLeft, History, Zap, Activity } from "lucide-react";
 import { AgentAvatar } from "./AgentAvatar";
 
 interface AppSidebarProps {
@@ -20,6 +20,7 @@ interface AppSidebarProps {
 
 const mainNav = [
   { title: "Dashboard", url: "/", icon: Home },
+  { title: "Live Monitor", url: "/live", icon: Activity },
   { title: "Send Payment", url: "/send", icon: ArrowUpRight },
   { title: "Request Payment", url: "/request", icon: ArrowDownLeft },
   { title: "History", url: "/history", icon: History },

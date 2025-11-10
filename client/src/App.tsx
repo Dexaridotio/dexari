@@ -8,6 +8,7 @@ import { AppSidebar } from "@/components/AppSidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ConnectWalletButton } from "@/components/ConnectWalletButton";
 import DashboardHome from "@/pages/DashboardHome";
+import LiveMonitorPage from "@/pages/LiveMonitorPage";
 import SendPaymentPage from "@/pages/SendPaymentPage";
 import RequestPaymentPage from "@/pages/RequestPaymentPage";
 import TransactionHistoryPage from "@/pages/TransactionHistoryPage";
@@ -17,6 +18,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={DashboardHome} />
+      <Route path="/live" component={LiveMonitorPage} />
       <Route path="/send" component={SendPaymentPage} />
       <Route path="/request" component={RequestPaymentPage} />
       <Route path="/history" component={TransactionHistoryPage} />
